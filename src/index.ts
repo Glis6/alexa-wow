@@ -1,7 +1,7 @@
 import * as Alexa from "alexa-sdk";
 
 import HelloWorldController from "./controllers/HelloWorldController";
-import WordlyHelloController from "./controllers/WordlyHelloController";
+import WordlyHelloController from "./controllers/WorldlyHelloController";
 
 let handler = function(event: Alexa.RequestBody, context: Alexa.Context, callback: Function): void {
     let alexa = Alexa.handler(event, context, callback);

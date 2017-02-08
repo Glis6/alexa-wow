@@ -1,9 +1,9 @@
 import * as Alexa from "alexa-sdk";
 
-import WordlyHello from "../services/WorldlyHello";
+import WorldlyHello from "../services/WorldlyHello";
 import IntentController from "./IntentController";
 
-class WordlyHelloController extends IntentController {
+class WorldlyHelloController extends IntentController {
 
     constructor(handler: Alexa.Handler) {
         super(handler);
@@ -15,7 +15,7 @@ class WordlyHelloController extends IntentController {
         let request: any = this.handler.event.request;
         console.log(request.intent.slots);
         let language = request.intent.slots.Language.value;
-        WordlyHello.getHello({ language }).then((response) => {
+        WorldlyHello.getHello({ language }).then((response) => {
 
             let ssml = response.ssml;
             // We need to clean the <speak> tags because
@@ -25,10 +25,10 @@ class WordlyHelloController extends IntentController {
 
             this.handler.emit(":tell", ssml);
         }).catch((error) => {
-            console.log(error);
+            console.error(error);
             this.handler.emit(":tell", "I could not find hello in that language");
         });
     }
 }
 
-export default WordlyHelloController;
+export default WorldlyHelloController;

@@ -3,7 +3,7 @@ import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
 
 import MockHandler from "../assets/MockHandler";
-import WorldlyHelloController from "./WordlyHelloController";
+import WorldlyHelloController from "./WorldlyHelloController";
 
 chai.use(sinonChai);
 let expect = chai.expect;
