@@ -40,7 +40,6 @@ describe("HelloWorld", function () {
     describe("WorldlyHelloIntent", function () {
         describe("when requested a known language", function () {
             it("returns a response", function () {
-                this.timeout(5000);
                 alexa.spoken("say hello in {welsh}", function(error, payload) {
                     expect(payload.response.outputSpeech.ssml).to.exist;
                     expect(payload.response.outputSpeech.ssml).to.contain("Helo");
