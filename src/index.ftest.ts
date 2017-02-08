@@ -15,6 +15,7 @@ describe("HelloWorld", function () {
             alexa.start(function (error) {
                 if (error !== undefined) {
                     console.error("Error: " + error);
+                    done();
                 } else {
                     done();
                 }
@@ -31,6 +32,7 @@ describe("HelloWorld", function () {
     });
     describe("LaunchIntent", function () {
         it("launches", function () {
+            this.timeout(5000);
             alexa.launched(function (error, payload) {
                 expect(payload.response.outputSpeech.ssml).to.exist;
                 expect(payload.response.outputSpeech.ssml).to.contain("Hello World");
@@ -38,12 +40,11 @@ describe("HelloWorld", function () {
         });
     });
     describe("WorldlyHelloIntent", function () {
-        describe("when requested a known language", function () {
-            it("returns a response", function () {
-                alexa.spoken("say hello in {welsh}", function(error, payload) {
-                    expect(payload.response.outputSpeech.ssml).to.exist;
-                    expect(payload.response.outputSpeech.ssml).to.contain("Helo");
-                });
+        it("returns a response for a known language", function () {
+            this.timeout(5000);
+            alexa.spoken("say hello in {welsh}", function (error, payload) {
+                expect(payload.response.outputSpeech.ssml).to.exist;
+                expect(payload.response.outputSpeech.ssml).to.contain("Helo");
             });
         });
     });

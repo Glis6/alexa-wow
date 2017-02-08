@@ -45,7 +45,7 @@
     "postinstall": "typings install",
     "lint": "tslint 'src/**/*.{ts,tsx}' -e **/*.scss.d.ts",
     "postversion": "git push && git push --tags",
-    "preftest": "npm run pretest",
+    "preftest": "webpack && npm run pretest",
     "ftest": "mocha './src/**/*.ftest.js'",
     "pretest": "tsc && npm run lint",
     "test": "mocha './src/**/*.test.js'",
