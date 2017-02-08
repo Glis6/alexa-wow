@@ -1,0 +1,18 @@
+{
+    "welsh": {
+        "text": "Helo",
+        "ssml": "<speak>Helo</speak>"
+    },
+    "english": {
+        "text": "Hello",
+        "ssml": "<speak>Hello</speak>"
+    },
+    "latin": {
+        "text": "Salve",
+        "ssml": "<speak>Salve</speak>"
+    },
+    "esperanto": {
+        "text": "Saluton",
+        "ssml": "<speak>Saluton</speak>"
+    }
+}
