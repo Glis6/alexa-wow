@@ -13,7 +13,7 @@ class WorldlyHelloController extends IntentController {
         // NOTE: The types are not recognizing intent as a property of request
         // need to caste it as any for now to get the slot value.
         let request: any = this.handler.event.request;
-        console.log(request.intent.slots);
+        // Pull the Language value form the slots
         let language = request.intent.slots.Language.value;
         WorldlyHello.getHello({ language }).then((response) => {
 
