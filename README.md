@@ -1,4 +1,4 @@
-Hello World!
+[![Build Status](https://travis-ci.org/bespoken/alexa-skills-kit-sdk-for-nodejs.svg?branch=master)](https://travis-ci.org/bespoken/alexa-skills-kit-sdk-for-nodejs)
 
 This is an over engineered, highly opinionated hello world for Alexa Skills.  It is a great boilerplate for starting Alexa Skills that have:
 
