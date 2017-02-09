@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate.svg?branch=master)](https://travis-ci.org/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate)
+[![Build Status](https://travis-ci.org/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate.svg?branch=master)](https://travis-ci.org/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate) [![Coverage Status](https://coveralls.io/repos/github/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate?branch=master)
 
 This is an over engineered, highly opinionated hello world for Alexa Skills.  It is a great boilerplate for starting Alexa Skills that have:
 
