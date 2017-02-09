@@ -30,7 +30,7 @@ $ npm run ftest
 
 Other things to Try:
 
-With `$bst proxy index.js` running:
+With `$npm run start` running, in a new terminal:
 
 ```
 $ bst speak say hello
