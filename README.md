@@ -6,12 +6,32 @@ This is an over engineered, highly opinionated hello world for Alexa Skills.  It
 * Testing with Coverage
 * Integration with Bespoken Tools
 
-Commands:
+## Setup
 
-Install:
+Install
 ```
 $ npm install
 ```
+
+Create a .env file for configuration at the project root, example .env file:
+```
+BST_SECRET_KEY=YOUR_SECRET_KEY
+```
+
+Get your BST_SECRET_KEY from https://bespoken.tools/dashboard
+
+Install BST CLI globally:
+__Not required but helpful__
+```
+$ npm install -g bespoken-tools
+```
+
+## Recommended IDE
+
+* [VS Code](https://code.visualstudio.com/)
+  - With TSLint extension (also seti-icons are highly recommended)
+
+## Commands
 
 Start Webpack & BST Proxy:
 ```
@@ -28,9 +48,10 @@ Run functional tests:
 $ npm run ftest
 ```
 
-Other things to Try:
+### Other things to Try:
 
 With `$npm run start` running, in a new terminal:
+__Note you must have the BST CLI installed globally__
 
 ```
 $ bst speak say hello
