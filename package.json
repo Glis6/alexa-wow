@@ -28,7 +28,7 @@
   "dependencies": {
     "alexa-sdk": "^1.0.4",
     "aws-sdk": "^2.7.21",
-    "bespoken-tools": "0.9.25",
+    "bespoken-tools": "1.2.8",
     "dotenv": "^4.0.0",
     "es6-promise": "^4.0.5",
     "fuse.js": "^2.6.1",
