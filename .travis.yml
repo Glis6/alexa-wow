@@ -9,4 +9,3 @@ branches:
 cache:
   directories:
   - node_modules
-  - typings/globals
