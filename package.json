@@ -46,7 +46,6 @@
     "url": "https://github.com/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate"
   },
   "scripts": {
-    "postinstall": "typings install",
     "lint": "tslint 'src/**/*.{ts,tsx}' -e **/*.scss.d.ts",
     "postversion": "git push && git push --tags",
     "preftest": "webpack && npm run pretest",
