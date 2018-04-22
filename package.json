@@ -23,7 +23,7 @@
     "typescript": "^2.1.5",
     "webpack": "^1.14.0",
     "webpack-node-externals": "^1.5.4",
-    "@types/chai": "latest",
+    "@types/sinon-chai": "latest",
     "@types/mocha": "latest",
     "@types/alexa-sdk": "latest"
   },
