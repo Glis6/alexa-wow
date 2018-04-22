@@ -25,7 +25,6 @@
     "webpack": "^1.14.0",
     "webpack-node-externals": "^1.5.4",
     "@types/chai": "latest",
-    "@types/coveralls": "latest",
     "@types/mocha": "latest",
     "@types/alexa-sdk": "latest"
   },
