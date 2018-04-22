@@ -27,8 +27,7 @@
     "@types/chai": "latest",
     "@types/coveralls": "latest",
     "@types/mocha": "latest",
-    "@types/alexa-sdk": "latest",
-    "@types/moment": "latest"
+    "@types/alexa-sdk": "latest"
   },
   "dependencies": {
     "alexa-sdk": "^1.0.4",
