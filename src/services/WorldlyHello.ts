@@ -1,7 +1,8 @@
 import "isomorphic-fetch";
+
 import {
-    WorldlyHelloResponse,
-    WorldlyHelloRequest
+    WorldlyHelloRequest,
+    WorldlyHelloResponse
 } from "../models";
 
 const data: any = require("./WorldlyHelloData.json");
