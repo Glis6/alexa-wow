@@ -6,3 +6,6 @@ script: npm run coveralls
 branches:
  only:
    - "master"
+cache:
+  directories:
+  - $HOME/.npm
