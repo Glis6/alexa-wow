@@ -1,18 +1,12 @@
 import "isomorphic-fetch";
+import {
+    WorldlyHelloRequest,
+    WorldlyHelloResponse
+} from "../models";
 
 const data: any = require("./WorldlyHelloData.json");
 
 namespace WorldlyHello {
-
-    export interface WorldlyHelloRequest {
-        language: string;
-    }
-
-    export interface WorldlyHelloResponse {
-        text: string;
-        ssml: string;
-    }
-
     export function getHello(request: WorldlyHelloRequest): Promise<WorldlyHelloResponse> {
         return new Promise((resolve, reject) => {
             const language = request.language.toLowerCase();

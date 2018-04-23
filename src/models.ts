@@ -1,6 +1,6 @@
 import * as Alexa from "alexa-sdk";
 
-class IntentController {
+export class IntentController {
     protected handler: Alexa.Handler<Alexa.Request>;
 
     constructor(handler: Alexa.Handler<Alexa.Request>) {
@@ -8,4 +8,11 @@ class IntentController {
     }
 }
 
-export default IntentController;
+export interface WorldlyHelloRequest {
+    language: string;
+}
+
+export interface WorldlyHelloResponse {
+    text: string;
+    ssml: string;
+}

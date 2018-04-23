@@ -1,7 +1,7 @@
 import * as Alexa from "alexa-sdk";
 
 import WorldlyHello from "../services/WorldlyHello";
-import IntentController from "./IntentController";
+import { IntentController } from "../models";
 
 class WorldlyHelloController extends IntentController {
 

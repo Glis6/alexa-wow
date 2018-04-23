@@ -1,6 +1,6 @@
 import * as Alexa from "alexa-sdk";
 
-import IntentController from "./IntentController";
+import { IntentController } from "../models";
 
 class HelloWorldController extends IntentController {
 
