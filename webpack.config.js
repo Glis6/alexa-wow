@@ -14,6 +14,16 @@ module.exports = {
 
     externals: [nodeExternals()],
 
+    plugins: [
+        // Adds the source-map-support plugin for mapping the error messages back to the source file
+        new webpack.BannerPlugin({
+            banner: "require('source-map-support').install();",
+            raw: true,
+            entryOnly:
+            false
+        })
+    ],
+
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 
