@@ -29,7 +29,7 @@ $ npm install -g bespoken-tools
 ## Recommended IDE
 
 * [VS Code](https://code.visualstudio.com/)
-  - With TSLint extension (also seti-icons are highly recommended)
+  - With TSLint extension (also [seti-icons](https://marketplace.visualstudio.com/items?itemName=qinjia.seti-icons) are highly recommended)
 
 ## Commands
 
