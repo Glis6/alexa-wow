@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "An opinionated boilerplate for Alexa Skills Kit development using TypeScript, Webpack, Bespoken Tools",
   "main": "index.js",
-  "engines" : { "node" : ">=6.11.5" },
+  "engines": {
+    "node": ">=6.11.5"
+  },
   "keywords": [
     "alexa",
     "skill",
