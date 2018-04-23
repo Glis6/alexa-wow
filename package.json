@@ -4,7 +4,7 @@
   "description": "An opinionated boilerplate for Alexa Skills Kit development using TypeScript, Webpack, Bespoken Tools",
   "main": "index.js",
   "engines": {
-    "node": ">=6.11.5"
+    "node": ">=8.10"
   },
   "keywords": [
     "alexa",
