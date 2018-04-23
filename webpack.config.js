@@ -16,7 +16,7 @@ module.exports = {
 
     plugins: [
         // Adds the source-map-support plugin for mapping the error messages back to the source file
-        new webpack.BannerPlugin("require("source-map-support").install();",
+        new webpack.BannerPlugin("require('source-map-support').install();",
             { raw: true, entryOnly: false })
     ],
 
