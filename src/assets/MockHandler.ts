@@ -1,6 +1,6 @@
 import * as Alexa from "alexa-sdk";
 
-class MockHandler implements Alexa.Handler {
+class MockHandler implements Alexa.Handler<any> {
     on: any;
     emit(event: string, ...args: any[]): boolean {
         return true;
@@ -13,6 +13,11 @@ class MockHandler implements Alexa.Handler {
     context: any = {};
     name: any = {};
     isOverriden: any = {};
+    i18n: any = {};
+    locale: any = {};
+    callback: any = {};
+    t: any = {};
+    response: any = {};
 }
 
 export default MockHandler;
