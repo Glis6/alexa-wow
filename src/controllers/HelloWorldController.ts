@@ -4,7 +4,7 @@ import IntentController from "./IntentController";
 
 class HelloWorldController extends IntentController {
 
-    constructor(handler: Alexa.Handler<any>) {
+    constructor(handler: Alexa.Handler<Alexa.Request>) {
         super(handler);
     }
 
