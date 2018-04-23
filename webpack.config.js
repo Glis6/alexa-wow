@@ -1,14 +1,14 @@
-var webpack = require('webpack');
-var path = require('path');
-var nodeExternals = require('webpack-node-externals');
+var webpack = require("webpack");
+var path = require("path");
+var nodeExternals = require("webpack-node-externals");
 
 module.exports = {
     entry: "./src/index.ts",
-    target: 'node',
+    target: "node",
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'index.js',
-        libraryTarget: 'umd',
+        path: path.join(__dirname, "dist"),
+        filename: "index.js",
+        libraryTarget: "umd",
         umdNamedDefine: true
     },
 
@@ -16,7 +16,7 @@ module.exports = {
 
     plugins: [
         // Adds the source-map-support plugin for mapping the error messages back to the source file
-        new webpack.BannerPlugin('require("source-map-support").install();',
+        new webpack.BannerPlugin("require("source-map-support").install();",
             { raw: true, entryOnly: false })
     ],
 
@@ -24,13 +24,13 @@ module.exports = {
     devtool: "source-map",
 
     resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
+        // Add ".ts" and ".tsx" as resolvable extensions.
         extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
     },
 
     module: {
         loaders: [
-            // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
+            // All files with a ".ts" or ".tsx" extension will be handled by "ts-loader".
             { test: /\.tsx?$/, loader: "ts-loader" },
             { test: /\.json$/, loader: "json-loader" }
         ],
