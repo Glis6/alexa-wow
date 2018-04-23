@@ -10,9 +10,9 @@ class WorldlyHelloController extends IntentController {
     }
 
     sayHello(): void {
-        let request: Alexa.IntentRequest = this.handler.event.request;
+        const request: Alexa.IntentRequest = this.handler.event.request;
         // Pull the Language value form the slots
-        let language = request.intent.slots.Language.value;
+        const language = request.intent.slots.Language.value;
         WorldlyHello.getHello({ language }).then((response) => {
 
             let ssml = response.ssml;

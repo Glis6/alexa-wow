@@ -10,9 +10,9 @@ let expect = chai.expect;
 
 describe("HelloWorldController", function() {
     describe("sayHello", function() {
-        let mockHandler = new MockHandler();
-        let emitStub = sinon.stub(mockHandler, "emit");
-        let helloWorldController = new HelloWorldController(mockHandler);
+        const mockHandler = new MockHandler();
+        const emitStub = sinon.stub(mockHandler, "emit");
+        const helloWorldController = new HelloWorldController(mockHandler);
         helloWorldController.sayHello();
         it("returns hello world", function() {
             expect(emitStub).to.have.been.calledOnce;

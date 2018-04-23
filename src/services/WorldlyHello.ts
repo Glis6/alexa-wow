@@ -1,6 +1,6 @@
 import "isomorphic-fetch";
 
-let data: any = require("./WorldlyHelloData.json");
+const data: any = require("./WorldlyHelloData.json");
 
 namespace WorldlyHello {
 
@@ -15,10 +15,8 @@ namespace WorldlyHello {
 
     export function getHello(request: WorldlyHelloRequest): Promise<WorldlyHelloResponse> {
         return new Promise((resolve, reject) => {
-
-            let language = request.language.toLowerCase();
-
-            let response = data[language];
+            const language = request.language.toLowerCase();
+            const response = data[language];
 
             if (response) {
                 resolve({
