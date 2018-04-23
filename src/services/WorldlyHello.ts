@@ -26,7 +26,7 @@ namespace WorldlyHello {
                     ssml: response.ssml
                 });
             } else {
-                reject(new Error(`Unknown language: ${data[language]}`));
+                reject(new Error(`Unknown language: ${language}`));
             }
         });
     }
