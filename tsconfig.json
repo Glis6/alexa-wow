@@ -4,10 +4,7 @@
         "module": "commonjs",
         "target": "es5",
         "noUnusedLocals": true,
-        "allowJs": true,
-        "typeRoots": [
-            "node_modules/@types"
-        ]
+        "allowJs": true
     },
     "include": [
         "./src/**/*"
