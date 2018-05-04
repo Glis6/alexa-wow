@@ -1,10 +1,10 @@
 import * as Alexa from "alexa-sdk";
 
-import IntentController from "./IntentController";
+import { IntentController } from "../models";
 
 class HelloWorldController extends IntentController {
 
-    constructor(handler: Alexa.Handler) {
+    constructor(handler: Alexa.Handler<Alexa.Request>) {
         super(handler);
     }
 

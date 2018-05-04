@@ -1,24 +1,17 @@
 import "isomorphic-fetch";
 
-let data: any = require("./WorldlyHelloData.json");
+import {
+    WorldlyHelloRequest,
+    WorldlyHelloResponse
+} from "../models";
+
+const data: any = require("./WorldlyHelloData.json");
 
 namespace WorldlyHello {
-
-    export interface WorldlyHelloRequest {
-        language: string;
-    }
-
-    export interface WorldlyHelloResponse {
-        text: string;
-        ssml: string;
-    }
-
     export function getHello(request: WorldlyHelloRequest): Promise<WorldlyHelloResponse> {
         return new Promise((resolve, reject) => {
-
-            let language = request.language.toLowerCase();
-
-            let response = data[language];
+            const language = request.language.toLowerCase();
+            const response = data[language];
 
             if (response) {
                 resolve({
@@ -26,7 +19,7 @@ namespace WorldlyHello {
                     ssml: response.ssml
                 });
             } else {
-                reject(new Error("Unknown language"));
+                reject(new Error(`Unknown language, request=${JSON.stringify(request)}`));
             }
         });
     }

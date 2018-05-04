@@ -1,20 +1,18 @@
 import * as Alexa from "alexa-sdk";
 
+import { IntentController } from "../models";
 import WorldlyHello from "../services/WorldlyHello";
-import IntentController from "./IntentController";
 
 class WorldlyHelloController extends IntentController {
 
-    constructor(handler: Alexa.Handler) {
+    constructor(handler: Alexa.Handler<Alexa.Request>) {
         super(handler);
     }
 
     sayHello(): void {
-        // NOTE: The types are not recognizing intent as a property of request
-        // need to caste it as any for now to get the slot value.
-        let request: any = this.handler.event.request;
+        const request: Alexa.IntentRequest = this.handler.event.request;
         // Pull the Language value form the slots
-        let language = request.intent.slots.Language.value;
+        const language = request.intent.slots.Language.value;
         WorldlyHello.getHello({ language }).then((response) => {
 
             let ssml = response.ssml;
