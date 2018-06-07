@@ -1,4 +1,0 @@
-HelloWorldIntent hello
-HelloWorldIntent say hello
-HelloWorldIntent say hello world
-WorldlyHelloIntent say hello in {Language}

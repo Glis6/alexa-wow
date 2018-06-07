@@ -34,20 +34,19 @@
     "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
-    "alexa-sdk": "^1.0.4",
+    "ask-sdk": "^2.0.5",
+    "ask-sdk-core": "^2.0.5",
     "aws-sdk": "^2.7.21",
     "bespoken-tools": "1.2.8",
     "dotenv": "^5.0.1",
     "es6-promise": "^4.0.5",
+    "es6-promisify": "^6.0.0",
     "fuse.js": "^3.2.0",
     "isomorphic-fetch": "^2.2.1",
     "moment": "^2.17.1",
+    "request": "^2.87.0",
     "source-map-loader": "^0.2.3",
     "source-map-support": "^0.5.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bespoken/alexa-skills-kit-nodejs-lambda-boilerplate"
   },
   "scripts": {
     "postinstall": "",
@@ -62,7 +61,7 @@
     "coveralls": "npm run coverage && ./node_modules/coveralls/bin/coveralls.js < coverage/lcov-ts.info",
     "start": "node ./node_modules/bespoken-tools/bin/bst-proxy.js lambda index.js & webpack --watch & wait",
     "build": "webpack",
-    "predeploy": "npm run test && npm run build",
-    "deploy": "node ./node_modules/bespoken-tools/bin/bst-deploy.js lambda . --lambdaName HelloWorld"
+    "predeploy": "npm run build",
+    "deploy": "bst deploy lambda ./dist --lambdaName WoWTools"
   }
 }

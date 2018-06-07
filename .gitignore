@@ -48,5 +48,5 @@ codeship.aes
 .idea
 *.zip
 .env
-
+.aws/*
 .DS_Store
