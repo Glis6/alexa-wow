@@ -1,11 +1,18 @@
 import {HandlerPair} from "../models/HandlerPair";
 import {RequestHandler} from "ask-sdk-core";
+import {isNullOrUndefined} from "util";
+import {NamedRequestHandler} from "../models/NamedRequestHandler";
 
 export class HandlerService {
     /**
-     * All handlers that we have registered.
+     * All handlerPairs that we have registered.
      */
-    private readonly handlers: HandlerPair[] = [];
+    private readonly handlerPairs: HandlerPair[] = [];
+
+    /**
+     * All request handlers that we have registered.
+     */
+    private readonly requestHandlers: NamedRequestHandler[] = [];
 
     /**
      * The default handler used if nothing fits the description.
@@ -20,10 +27,19 @@ export class HandlerService {
     }
 
     /**
-     * Registers the handlers.
+     * Registers the request handlers.
      */
-    registerHandlers(handlers: HandlerPair[]): HandlerService {
-        this.handlers.push(...handlers);
+    registerHandlerPairs(handlers: HandlerPair[]): HandlerService {
+        this.handlerPairs.push(...handlers);
+        this.requestHandlers.push(...handlers.map(handler => handler.requestHandler));
+        return this;
+    }
+
+    /**
+     * Registers the request handlers.
+     */
+    registerHandlers(handlers: NamedRequestHandler[]): HandlerService {
+        this.requestHandlers.push(...handlers);
         return this;
     }
 
@@ -32,7 +48,7 @@ export class HandlerService {
      * @returns {RequestHandler} The handler found for the alias or the default handler.
      */
     getIntentNameForAlias(alias: string): string {
-        const foundHandler: HandlerPair = this.handlers.filter(handlerPair => {
+        const foundHandler: HandlerPair = this.handlerPairs.filter(handlerPair => {
             const aliasMatch: boolean = handlerPair.alias.find(handlerAlias => alias.toLowerCase().includes(handlerAlias.toLowerCase())) != undefined;
             if(aliasMatch)
                 return aliasMatch;
@@ -49,16 +65,18 @@ export class HandlerService {
      * @returns {RequestHandler} The handler found that fits the intent name.
      */
     getHandlerForIntent(intent: string): RequestHandler {
-        const foundHandler: HandlerPair = this.handlers.filter(handlerPair => handlerPair.requestHandler.getIntentName().toLowerCase() == intent.toLowerCase()).shift();
+        if(isNullOrUndefined(intent))
+            return this.defaultHandler;
+        const foundHandler: NamedRequestHandler = this.requestHandlers.filter(handlers => handlers.getIntentName().toLowerCase() == intent.toLowerCase()).shift();
         if(foundHandler)
-            return foundHandler.requestHandler;
+            return foundHandler;
         return this.defaultHandler;
     }
 
     /**
      * Gets all handler pairs.
      */
-    getAllHandlers(): HandlerPair[] {
-        return this.handlers;
+    getAllHandlerPairs(): HandlerPair[] {
+        return this.handlerPairs;
     }
 }

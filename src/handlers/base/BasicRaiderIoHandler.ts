@@ -1,4 +1,4 @@
-import {NamedRequestHandler} from "../models/NamedRequestHandler";
+import {NamedRequestHandler} from "../../models/NamedRequestHandler";
 import {HandlerInput} from "ask-sdk-core";
 import {Response} from "ask-sdk-model";
 import {IntentRequest, SlotValue} from "alexa-sdk";
@@ -24,6 +24,9 @@ export abstract class BasicRaiderIoHandler extends NamedRequestHandler {
         const intentRequest: IntentRequest = handlerInput.requestEnvelope.request as IntentRequest;
         const slots: Record<string, SlotValue> = intentRequest.intent.slots;
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+
+        //We'll force the intent to return here.
+        sessionAttributes.Intent = this.intentName;
 
         let character: string = sessionAttributes.Character || undefined;
         let realm: string = sessionAttributes.Realm || undefined;

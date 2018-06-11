@@ -3,9 +3,9 @@ import {HandlerInput} from "ask-sdk-core";
 import {Response} from "ask-sdk-model";
 import {all, dps, healer, tank} from "../models/raiderio/score/ScoreType";
 import {SlotValue} from "alexa-sdk";
-import {BasicRaiderIoHandler} from "./BasicRaiderIoHandler";
+import {BasicRaiderIoHandler} from "./base/BasicRaiderIoHandler";
 import {isNullOrUndefined} from "util";
-import {RaiderIoDataHandler} from "./RaiderIoDataHandler";
+import {getSlotValuesIfValid} from "../util/Util";
 
 export class RaiderIoScoreHandler extends BasicRaiderIoHandler {
     /**
@@ -25,7 +25,7 @@ export class RaiderIoScoreHandler extends BasicRaiderIoHandler {
      * {@inheritDoc
      */
     handleRaiderIo(handlerInput: HandlerInput, slots: Record<string, SlotValue>, sessionAttributes, character: string, realm: string, region: string): Promise<Response> | Response {
-        const scoreTypeSlotValue = RaiderIoDataHandler.getSlotValuesIfValid(slots.ScoreType);
+        const scoreTypeSlotValue = getSlotValuesIfValid(slots.ScoreType);
 
         const scoreType = sessionAttributes.ScoreType || {
             value: scoreTypeSlotValue ? scoreTypeSlotValue.shift() : undefined,

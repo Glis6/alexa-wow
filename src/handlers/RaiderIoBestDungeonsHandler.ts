@@ -3,8 +3,8 @@ import {HandlerInput} from "ask-sdk-core";
 import {Response} from "ask-sdk-model";
 import {SlotValue} from "alexa-sdk";
 import {Dungeon, textToDungeon} from "../models/raiderio/dungeons/Dungeons";
-import {BasicRaiderIoHandler} from "./BasicRaiderIoHandler";
-import {RaiderIoDataHandler} from "./RaiderIoDataHandler";
+import {BasicRaiderIoHandler} from "./base/BasicRaiderIoHandler";
+import {getSlotValuesIfValid} from "../util/Util";
 
 export class RaiderIoBestDungeonsHandler extends BasicRaiderIoHandler {
     /**
@@ -26,7 +26,7 @@ export class RaiderIoBestDungeonsHandler extends BasicRaiderIoHandler {
     handleRaiderIo(handlerInput: HandlerInput, slots: Record<string, SlotValue>, sessionAttributes, character: string, realm: string, region: string): Promise<Response> | Response {
         let dungeons: Dungeon[];
 
-        const dungeonSlotValue = RaiderIoDataHandler.getSlotValuesIfValid(slots.Dungeons);
+        const dungeonSlotValue = getSlotValuesIfValid(slots.Dungeons);
 
         if(dungeonSlotValue) {
             dungeons = textToDungeon(dungeonSlotValue);

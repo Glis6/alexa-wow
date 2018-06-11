@@ -4,9 +4,9 @@ import {Response} from "ask-sdk-model";
 import {SlotValue} from "alexa-sdk";
 import {overall} from "../models/raiderio/rank/RankType";
 import {realm as regionRank} from "../models/raiderio/rank/RankRegion";
-import {BasicRaiderIoHandler} from "./BasicRaiderIoHandler";
+import {BasicRaiderIoHandler} from "./base/BasicRaiderIoHandler";
 import {isNullOrUndefined} from "util";
-import {RaiderIoDataHandler} from "./RaiderIoDataHandler";
+import {getSlotValuesIfValid} from "../util/Util";
 
 export const DEFAULT_VALUES_STRING: string = "use default values";
 
@@ -30,8 +30,8 @@ export class RaiderIoRankHandler extends BasicRaiderIoHandler {
      * {@inheritDoc
      */
     handleRaiderIo(handlerInput: HandlerInput, slots: Record<string, SlotValue>, sessionAttributes, character: string, realm: string, region: string): Promise<Response> | Response {
-        const rankTypeSlotValue = RaiderIoDataHandler.getSlotValuesIfValid(slots.RankType);
-        const rankRegionSlotValue = RaiderIoDataHandler.getSlotValuesIfValid(slots.RankRegion);
+        const rankTypeSlotValue = getSlotValuesIfValid(slots.RankType);
+        const rankRegionSlotValue = getSlotValuesIfValid(slots.RankRegion);
 
         const rankType = sessionAttributes.RankType || {
             value: rankTypeSlotValue ? rankTypeSlotValue.shift() : undefined,
